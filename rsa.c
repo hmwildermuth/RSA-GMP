@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#ifndef __GNU_MP__
+#include "gmp_stub.h"
+#else
 #include <gmp.h>
+#endif
 #include <ctype.h>
 #include <unistd.h>
 
@@ -83,8 +87,6 @@ RSAencrypt(char *plaintext, int length, mpz_t e, mpz_t n)
 	mpz_init(m);
 	mpz_t c;
 	mpz_init(c);
-	mpz_t l;
-	mpz_init(l);
 	struct return_struct ret;
 	size_t count;
 
@@ -100,7 +102,7 @@ RSAencrypt(char *plaintext, int length, mpz_t e, mpz_t n)
 }
 
 int
-main(int argc, char const *argv[]) {
+main(int argc, char *argv[]) {
 	int gflag = 0;
 	int nflag = 0;
 	int eflag = 0;
