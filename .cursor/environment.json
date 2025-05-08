@@ -1,0 +1,9 @@
+{
+  "snapshot": "snapshot-20250508-eeffaa46-749d-47c7-bfd2-b54e9edca014",
+  "terminals": [
+    {
+      "name": "bash",
+      "command": "bash"
+    }
+  ]
+}
